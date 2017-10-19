@@ -120,7 +120,10 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   end
 end
 
-Then /^(?:|I )should not see "([^"]*)"$/ do |text|
+
+
+
+Then /^(?:|I )should not see "([^"]*)"/ do |text|
   if page.respond_to? :should
     page.should have_no_content(text)
   else
@@ -161,6 +164,7 @@ Then /^the "([^"]*)" field(?: within (.*))? should not contain "([^"]*)"$/ do |f
     end
   end
 end
+
 
 Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_message|
   element = find_field(field)
